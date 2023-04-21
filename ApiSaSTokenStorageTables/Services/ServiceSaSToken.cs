@@ -35,7 +35,7 @@ namespace ApiSaSTokenStorageTables.Services
             //de acceso
             Uri uriToken = this.tablaAlumnos.GenerateSasUri(builder);
             //extraemos la ruta HTTPS con el token
-            string token = uriToken.AbsolutePath;
+            string token = uriToken.AbsoluteUri;
             return token;
         }
     }

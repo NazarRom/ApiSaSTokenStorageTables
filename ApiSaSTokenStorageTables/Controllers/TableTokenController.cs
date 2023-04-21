@@ -20,7 +20,19 @@ namespace ApiSaSTokenStorageTables.Controllers
         public ActionResult<string> GenerateToken(string curso)
         {
             string token = this.service.GenerateSaSToken(curso);
-            return token;
+            //podemos personalizar el json que devolvemos
+            //{numeroregistros: 5, Datos: List<T>}
+            //return Ok(
+            //    new
+            //    {
+            //        numeroregistros = 5,
+            //        datos = new List<int>()
+            //    });
+            //{token: TOKNEVALUE}
+            return Ok(new
+            {
+                token = token
+            });
         }
     }
 }
